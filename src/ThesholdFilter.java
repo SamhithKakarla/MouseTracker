@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 
 public class ThesholdFilter implements PixelFilter, Clickable {
-    private int threshold = 127;
+    private int threshold = 50;
 
     @Override
     public DImage processImage(DImage img) {
@@ -10,9 +10,9 @@ public class ThesholdFilter implements PixelFilter, Clickable {
         for (int r = 0; r < pixels.length; r++) {
             for (int c = 0; c < pixels[r].length; c++) {
                 if (pixels[r][c] > threshold) {
-                    pixels[r][c] = 255;
-                } else {
                     pixels[r][c] = 0;
+                } else {
+                    pixels[r][c] = 255;
                 }
             }
         }
